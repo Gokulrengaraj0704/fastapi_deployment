@@ -48,7 +48,7 @@ logger = logging.getLogger(__name__)
 
 conf = ConnectionConfig(
     MAIL_USERNAME="gokulrengaraj07@gmail.com",
-    MAIL_PASSWORD="svmx bmqs omrb gktb",
+    MAIL_PASSWORD="nhlq zhsr kivr wslm",
     MAIL_FROM="gokulrengaraj07@gmail.com",
     MAIL_PORT=587,
     MAIL_SERVER="smtp.gmail.com",
@@ -91,7 +91,7 @@ class EmailSettings(BaseModel):
 
 email_settings = EmailSettings(
     MAIL_USERNAME="gokulrengaraj07@gmail.com",
-    MAIL_PASSWORD="svmx bmqs omrb gktb",
+    MAIL_PASSWORD="nhlq zhsr kivr wslm",
     MAIL_PORT=587,
     MAIL_SERVER="smtp.gmail.com",
     MAIL_FROM="gokulrengaraj07@gmail.comm",
@@ -333,7 +333,7 @@ async def admin_dashboard(request: Request, db: Session = Depends(get_db)):
 
 def send_reset_email(recipient_email: str, reset_url: str):
     sender_email = "gokulrengaraj07@gmail.com"
-    sender_password = "svmx bmqs omrb gktb"
+    sender_password = "nhlq zhsr kivr wslm"
     subject = "Password Reset Request"
 
     # Load the HTML template from the file
@@ -366,7 +366,7 @@ def send_email(to_email: str, subject: str, body: str):
     smtp_server = "smtp.gmail.com"
     smtp_port = 587
     sender_email = "gokulrengaraj07@gmail.com"
-    sender_password = "svmx bmqs omrb gktb"
+    sender_password = "nhlq zhsr kivr wslm"
 
     msg = MIMEMultipart()
     msg["From"] = sender_email
@@ -520,7 +520,7 @@ async def approve_event(event_id: int, db: Session = Depends(get_db)):
     if not user:
         raise HTTPException(status_code=404, detail="User not found")
 
-    form_creation_url = f"http://localhost:8000/create-form?token={token}"
+    form_creation_url = f"http://3.131.134.37:8000/create-form?token={token}"
 
     try:
         await send_form_creation_link_email(user.email, form_creation_url)
